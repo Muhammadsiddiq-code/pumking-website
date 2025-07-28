@@ -12,6 +12,12 @@
             text-decoration: none;
             list-style: none;
         }
+        body{
+                        background-color: rgb(0, 3, 85);
+                        color: white;
+                        font-family: monospace;
+
+        }
         
         header img{
             width: 150px;
@@ -32,11 +38,15 @@
             color: white;
         }
 
+        header nav ul a{
+            font-size: 18px;
+        }
+
         header nav ul{
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 25px;
         }
 
         header button{
@@ -50,6 +60,80 @@
         header button a{
                          color: rgb(255, 255, 255);
 
+        }
+
+        main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+        }
+
+        main img{
+            width: 100px;
+            height: 100px;
+        }
+
+        .banner{
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .banner h1{
+            font-size: 55px;
+            margin-bottom: 50px;
+            text-shadow: 0 0 5px #fff;
+        }
+
+        .banner p{
+            font-size: 20px;
+            text-shadow: 0 0 5px black;
+        }
+        .banner img{
+            width: 550px;
+            height: 550px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px 20px #ffffff80;
+        }
+
+        .banner span{
+            color: crimson;
+            font-weight: 900;
+            font-family: cursive;
+            text-shadow: 0 0 5px #ffffff;
+        }
+
+        .cards {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 100px;
+        }
+        .cards .card img{
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cards .card h1{
+            margin-bottom: 20px;
+            font-family: cursive;
+            text-shadow: 0 0 5px #ffffff;
+        }
+
+        .cards .card p{
+            text-shadow: 0 0 5px black;
         }
     </style>
 </head>
@@ -69,10 +153,48 @@
             </nav>
         </div>
         <div class="card">
-            <button><a href="https://github.com/dioo1505">pumpking's teacher</a></button>
+            <button><a href="https://github.com/dioo1505">Pumpking's teacher</a></button>
         </div>
     </header>
     
+
+    <div class="banner">
+        <div class="card">
+            <img src="https://avatars.githubusercontent.com/u/144683277?v=4" alt="">
+        </div>
+        <div class="card">
+                        <h1>pumpking's Teacher. <br> <span>Dioo</span></h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti blanditiis quia accusantium perferendis inventore
+                            commodi quidem fugiat recusandae nemo deleniti!</p>
+
+        </div>
+    </div>
+    <main>
+
+    <div class="cards">
+        <div class="card">
+            <img src="./images/photo_2025-07-19_22-32-17.jpg" alt="">
+
+            <h1>Muhammad Siddiq</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos itaque nisi officiis deleniti provident delectus ex, quos dolore libero aliquam.</p>
+        </div>
+        <div class="card">
+                        <img src="https://avatars.githubusercontent.com/u/150067414?v=4" alt="">
+                        <h1>Muhammad Amin</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus modi laudantium iste molestiae exercitationem. Id error temporibus at laborum quam?</p>
+        </div>
+        <div class="card">
+                        <img src="./images/photo_2024-11-11_11-15-47.jpg" alt="">
+                        <h1>Zohirshox</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, corrupti sunt libero alias quos enim pariatur illum aut dolor. Enim.</p>
+        </div>
+        <div class="card">
+                        <img src="./images/photo_2025-07-28_09-15-39.jpg" alt="">
+                        <h1>Mubosher</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti repellendus ea minus voluptatibus sapiente dolorem eaque quo, reprehenderit suscipit perferendis.</p>
+        </div>
+    </div>
+    </main>
 
 </body>
 </html>
