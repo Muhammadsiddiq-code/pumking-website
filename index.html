@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -197,4 +197,421 @@
     </main>
 
 </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumpking's Team Portfolio</title>
+    <style>
+        :root {
+            --bg-color: rgb(0, 3, 85);
+            --text-color: white;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --border-color: white;
+            --accent-color: crimson;
+            --shadow-color: rgba(255, 255, 255, 0.3);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --border-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-color) 0%, rgba(0, 20, 100, 1) 100%);
+            color: var(--text-color);
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s ease;
+            min-height: 100vh;
+        }
+
+        [data-theme="light"] body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-family: inherit;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px var(--shadow-color);
+        }
+
+        header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        header nav ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        header nav ul a {
+            color: var(--text-color);
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        header nav ul a:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        header button {
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 25px;
+            font-family: inherit;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        header button:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        header button a {
+            color: inherit;
+        }
+
+        .banner {
+            width: 100%;
+            padding: 80px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .banner img {
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+
+        .banner img:hover {
+            transform: translateY(-10px);
+        }
+
+        .banner h1 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .banner span {
+            color: var(--accent-color);
+            font-weight: 900;
+            font-family: cursive;
+            display: block;
+            margin-top: 10px;
+            text-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 80px 100px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-color);
+        }
+
+        .card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .card h1 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            font-family: cursive;
+        }
+
+        .card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            header nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .banner {
+                padding: 40px 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner img {
+                width: 300px;
+                height: 300px;
+            }
+
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            .banner h1 {
+                font-size: 2rem;
+            }
+
+            .banner img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+
+    <header>
+        <div>
+            <!-- <img src="./images/assets_task_01k13gkm7hepptxm255v1z8ywm_1753538605_img_0-removebg-preview.png" alt="Team Logo"> -->
+             <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01k17q8jjcf208vwmhwap95pvd%2F1753679754_img_0.webp?st=2025-07-28T03%3A23%3A06Z&se=2025-08-03T04%3A23%3A06Z&sks=b&skt=2025-07-28T03%3A23%3A06Z&ske=2025-08-03T04%3A23%3A06Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=w6zNoinDWQqw9GonCkwhhdoYExlzVxTKRJZYNjZ2Mmw%3D&az=oaivgprodscus" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/Muhammadsiddiq-code" target="_blank">Muhammad Siddiq</a></li>
+                <li><a href="https://github.com/Muhammadamin2911" target="_blank">Muhammad Amin</a></li>
+                <li><a href="https://github.com/Zohirshoh711" target="_blank">Zohirshox</a></li>
+                <li><a href="https://github.com/Shoboev" target="_blank">Mubosher</a></li>
+            </ul>
+        </nav>
+        <button>
+            <a href="https://github.com/dioo1505" target="_blank">Pumpking's Teacher</a>
+        </button>
+    </header>
+
+    <div class="banner">
+        <div>
+            <h1>
+                Pumpking's Teacher
+                <span>Dioo</span>
+            </h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti blanditiis quia accusantium
+                perferendis inventore commodi quidem fugiat recusandae nemo deleniti!</p>
+        </div>
+        <div>
+            <img src="https://avatars.githubusercontent.com/u/144683277?v=4" alt="Teacher Avatar">
+        </div>
+    </div>
+
+    <main>
+        <div class="cards">
+            <div class="card">
+                <img src="./images/photo_2025-07-19_22-32-17.jpg" alt="Muhammad Siddiq">
+                <h1>Muhammad Siddiq</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos itaque nisi officiis deleniti provident
+                    delectus ex, quos dolore libero aliquam.</p>
+            </div>
+            <div class="card">
+                <img src="https://avatars.githubusercontent.com/u/150067414?v=4" alt="Muhammad Amin">
+                <h1>Muhammad Amin</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus modi laudantium iste molestiae
+                    exercitationem. Id error temporibus at laborum quam?</p>
+            </div>
+            <div class="card">
+                <img src="./images/photo_2024-11-11_11-15-47.jpg" alt="Zohirshox">
+                <h1>Zohirshox</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, corrupti sunt libero alias quos enim
+                    pariatur illum aut dolor. Enim.</p>
+            </div>
+            <div class="card">
+                <img src="./images/photo_2025-07-28_09-15-39.jpg" alt="Mubosher">
+                <h1>Mubosher</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti repellendus ea minus voluptatibus
+                    sapiente dolorem eaque quo, reprehenderit suscipit perferendis.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let isDarkMode = true;
+        const themeToggle = document.querySelector('.theme-toggle');
+
+        function toggleTheme() {
+            isDarkMode = !isDarkMode;
+
+            if (isDarkMode) {
+                document.documentElement.removeAttribute('data-theme');
+                themeToggle.innerHTML = '🌙 Dark';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeToggle.innerHTML = '☀️ Light';
+            }
+
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        }
+
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                isDarkMode = false;
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeToggle.innerHTML = '☀️ Light';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
 </html>
